@@ -5,7 +5,8 @@ on:
 jobs:
   libcore:
     name: Native Build (LibCore)
-    runs-on: self-hosted
+    runs-on: 
+      labels: ubuntu-16-cores-org
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -44,7 +45,8 @@ jobs:
           ./run lib core
   build:
     name: Gradle Build
-    runs-on: self-hosted
+    runs-on:
+      labels: ubuntu-16-cores-org
     needs:
       - libcore
     steps:
